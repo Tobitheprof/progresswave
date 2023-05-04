@@ -1,0 +1,87 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/auth.css' %}">
+{% endblock %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container p-3">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Register</li>
+        </ol>
+        <h2>Sign Up</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page ftco-section">
+      <div class="container">
+          <div class="row justify-content-center w-100">
+              <div class="col-md-12 col-lg-10">
+                  <div class="wrap d-md-flex">
+                      <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                          <div class="text w-100">
+                              <h2>Welcome Back</h2>
+                              <p>Don't have an acocunt?</p>
+                              <a href="#" class="btn btn-white btn-outline-white">Sign Up</a>
+                          </div>
+                      </div>
+                      <div class="login-wrap p-4 p-lg-5">
+                          <div class="d-flex">
+                              <div class="w-100">
+                                  <h3 class="mb-4">Sign In</h3>
+                              </div>
+                              <div class="w-100">
+                                  <p class="social-media d-flex justify-content-end">
+                                      <a href="" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-google"></span></a>
+                                      <a href="" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-twitter"></span></a>
+                                  </p>
+                              </div>
+                          </div>
+                          <form action="" method="POST" class="sigin-form">
+
+                            <div class="form-group mb-3 mt-4">
+                                <label for="first_name" class="label mb-2">First Name: </label>
+                                <input type="text" name="first_name" id="first_name" class="form-control" placeholder="John" required>
+                            </div>
+
+                            <div class="form-group mb-3 mt-4">
+                                <label for="last_name" class="label mb-2">Last Name: </label>
+                                <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Doe" required>
+                            </div>
+
+                            <div class="form-group mb-3 mt-4">
+                              <label for="email" class="label mb-2">Email: </label>
+                              <input type="email" name="email" id="email" class="form-control" placeholder="johndoe@mail.com" required>
+                            </div>
+
+                            <div class="form-group mb-3 mt-4">
+                              <label for="password" class="label mb-2">Password: </label>
+                              <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
+                            </div>
+
+                            <div class="form-group mb-3 mt-4">
+                              <label for="password2" class="label mb-2">Confirm Password: </label>
+                              <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirm Password" required>
+                            </div>
+                          
+                            <div class="form-group mb-5 mt-3">
+                                <button type="submit" class="form-control btn btn-primary sub,it px-3">Log In</button>
+                            </div>
+
+                          </form>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </div>
+  </section>
+
+
+</main><!-- End #main -->
+{% endblock %}
