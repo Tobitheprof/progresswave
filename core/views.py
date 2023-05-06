@@ -9,6 +9,20 @@ from django.core.paginator import *
 from django.db.models import Q
 import requests
 import json
+
+
+
+
+# <--------------------- Auth Views Start ------------------------------> #
+def home(request):
+    return render(request, 'home.html')
+
+# <--------------------- Auth Views End ------------------------------> #
+
+
+
+
+
 # <--------------------- Unauth Views Start ------------------------------> #
 
 def index(request):

@@ -3,6 +3,11 @@ from . import views
 
 urlpatterns = [
 
+    # <--------------------- Auth Views Start ------------------------------> #
+    path('home', views.home, name="home"),
+    # <--------------------- Auth Views End ------------------------------> #
+
+
     # <--------------------- Unauth Views Start ------------------------------> #
     path('', views.index, name="index"),
     path('login', views.login, name="login"),
