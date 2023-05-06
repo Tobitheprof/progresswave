@@ -41,6 +41,53 @@ def login(request):
 
 
 def register(request):
+    context = {
+        'title' : 'Sign Up',
+    }
+    if request.method == 'POST':
+        #Requesting POST data
+        first_name = request.POST['first_name']
+        last_name = request.POST['last_name']
+        username = request.POST['username']
+        email = request.POST['email']
+        password = request.POST['password']
+        password2 = request.POST['password2']
+        #End of POST data request
+
+        #Condition is executed if both passwords are the same
+        if password == password2:
+            if User.objects.filter(email=email).exists(): #Checking databse for existing data
+                messages.info(request, "This email is already in use")#Returns Error Message
+                return redirect(register)
+            elif User.objects.filter(username=username).exists():
+                messages.info(request, "Username Taken")
+                return redirect('register')
+            #Else condition executed if the above conditions are not fulfilled    
+            else:
+                ctx = {
+                    'user' : username
+                }
+                message = get_template('mail.html').render(ctx)
+                msg = EmailMessage(
+                    'Welcome to Paradoxx',
+                    message,
+                    'Paradoxx',
+                    [email],
+                )
+                msg.content_subtype ="html"# Main content is now text/html
+                msg.send()
+                user = User.objects.create_user(username=username, email=email, password=password, first_name=first_name, last_name=last_name )
+                user.save()
+                user_login = auth.authenticate(username=username, password=password)
+                auth.login(request, user_login)#Logs in USER
+
+
+
+            #Create user model and redirect to edit-profile
+            return redirect('cont')#Rediects to specified page once condition is met
+        else:
+            messages.info(request, "Passwords do not match")
+            return redirect("register")
     return render(request, 'register.html')
 
 
