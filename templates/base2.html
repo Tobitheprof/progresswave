@@ -4,22 +4,24 @@
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/css/bootstrap.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendor/aos/aos.css' %}">
     <link rel="shortcut icon" href="{% static 'assets/img/logo.png' %}" type="image/x-icon">
-	<link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons-1.10.3/bootstrap-icons.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/vendor/bootstrap/css/bootstrap.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/vendor/bootstrap-icons/bootstrap-icons.css' %}">
     <link rel="stylesheet" href="{% static 'assets/vendor/aos/aos.css' %}">
-    <title>Sigma | {{title}}</title>
+    <link href="{% static 'assets/vendor/swiper/swiper-bundle.min.css' %}" rel="stylesheet">
+
+    <title>ProgressWave | {{title}}</title>
     <style>
         section{
             padding: 12px 0;
         }
     </style>
-	<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">
-    <link rel="stylesheet" href="{% static 'assets/css/styles.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+
 	{% block css %}{% endblock %}
-	<link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700,800,900" rel="stylesheet">
+	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">  
   </head>
   <body>
     <div class="wrapper d-flex align-items-stretch">
@@ -40,11 +42,11 @@
 					</li>
 
 					<li class="active">
-						<a href="#" class="custom-text"><i class="bi bi-pencil-fill mr-3"></i> Edit Profile</a>
+						<a href="#" class="custom-text"><i class="bi bi-person-fill mr-3"></i> Profile</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-file-spreadsheet mr-3 custom-text"></i> Latest Health News</a>
+						<a href="#" class="custom-text"><i class="bi bi-globe mr-3 custom-text"></i> Protect the Earth</a>
 					</li>
 
 					<li>
@@ -52,7 +54,7 @@
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-search mr-3 custom-text"></i> Hospital Finder</a>
+						<a href="#" class="custom-text"><i class="bi bi-briefcase mr-3 custom-text"></i> Opportunities</a>
 					</li>
 
 					<li>
@@ -89,14 +91,15 @@
 	</div>
 
 
+    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
     <script src="{% static 'assets/js/jquery.min.js' %}"></script>
     <script src="{% static 'assets/js/popper.js' %}"></script>
     <script src="{% static 'assets/vendor/aos/aos.js' %}"></script>
     <script>AOS.init();</script>
     <script src="{% static 'assets/js/bootstrap.min.js' %}"></script>
-    <script src="{% static 'assets/vendor/bootstrap/js/bootstrap.bundle.js' %}"></script>
-    <script src="{% static 'assets/js/main.js' %}"></script>
-
+    <script src="{% static 'assets/vendor/swiper/swiper-bundle.min.js' %}"></script>
+    <script src="{% static 'assets/js/sidebar.js' %}"></script>
+    <script src="{% static 'assets/js/swiper.js' %}"></script>
 
   </body>
 </html>

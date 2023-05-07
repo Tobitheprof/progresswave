@@ -1,0 +1,110 @@
+.intro{
+    background: #3b5abb;
+}
+.white{
+    color: #f3f3f3;
+}
+section{
+    padding: 60px 0;
+}
+/*--------------------------------------------------------------
+# Whu Us
+--------------------------------------------------------------*/
+.why-us .box {
+  padding: 50px 30px;
+  box-shadow: 0px 2px 15px rgba(0, 0, 0, 0.1);
+  transition: all ease-in-out 0.3s;
+  height: 100%;
+}
+
+.why-us .box span {
+  display: block;
+  font-size: 28px;
+  font-weight: 700;
+  color: #3b5abb;
+}
+
+.why-us .box h4 {
+  font-size: 24px;
+  font-weight: 600;
+  padding: 0;
+  margin: 20px 0;
+  color: #6c665c;
+}
+
+.why-us .box p {
+  color: #aaaaaa;
+  font-size: 15px;
+  margin: 0;
+  padding: 0;
+}
+
+.why-us .box:hover {
+  background: #3b5abb;
+  padding: 30px 30px 70px 30px;
+  box-shadow: 10px 15px 30px rgba(0, 0, 0, 0.18);
+}
+
+.why-us .box:hover span,
+.why-us .box:hover h4,
+.why-us .box:hover p {
+  color: #fff;
+}
+/*--------------------------------------------------------------
+# Courses
+--------------------------------------------------------------*/
+.courses .course-item {
+    border-radius: 5px;
+    border: 1px solid #eef0ef;
+  }
+  .courses .course-content {
+    padding: 15px;
+  }
+  .courses .course-content h3 {
+    font-weight: 700;
+    font-size: 20px;
+  }
+  .courses .course-content h3 a {
+    color: #37423b;
+    transition: 0.3s;
+  }
+  .courses .course-content h3 a:hover {
+    color:var(--shady-blue) !important;
+  }
+  .courses .course-content p {
+    font-size: 14px;
+    color: #777777;
+  }
+  .courses .course-content h4 {
+    font-size: 14px;
+    background:  var(--active-link);
+    padding: 7px 14px;
+    color: #fff;
+    margin: 0;
+  }
+  .courses .course-content .price {
+    margin: 0;
+    font-weight: 700;
+    font-size: 18px;
+    color: #37423b;
+  }
+  .courses .trainer {
+    padding-top: 15px;
+    border-top: 1px solid #eef0ef;
+  }
+  .courses .trainer .trainer-profile img {
+    max-width: 50px;
+    border-radius: 50px;
+  }
+  .courses .trainer .trainer-profile span {
+    padding-left: 10px;
+    font-weight: 600;
+    font-size: 16px;
+    color: #5a6c60;
+  }
+  .courses .trainer .trainer-rank {
+    font-size: 18px;
+    color: #657a6d;
+  }
+  
+
