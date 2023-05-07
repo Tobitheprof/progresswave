@@ -120,9 +120,9 @@ def cont(request):
         }
         message = get_template('mail.html').render(ctx)
         msg = EmailMessage(
-            'Welcome to Sigma',
+            'Welcome to ProgressWave',
             message,
-            'Paradoxx',
+            'ProgressWave',
             [user_model.email],
         )
         msg.content_subtype ="html"# Main content is now text/html

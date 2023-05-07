@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block css %}
+<link rel="stylesheet" href="{% static 'assets/css/auth.css' %}">
+{% endblock %}
+{% block content %}
+<main id="main">
+
+    <!-- ======= Breadcrumbs ======= -->
+    <section class="breadcrumbs">
+      <div class="container p-3">
+
+        <ol>
+          <li><a href="index.html">Home</a></li>
+          <li>Login</li>
+        </ol>
+        <h2>Login</h2>
+
+      </div>
+    </section><!-- End Breadcrumbs -->
+
+    <section class="inner-page ftco-section">
+        <div class="container">
+            <div class="row justify-content-center w-100">
+                <div class="col-md-12 col-lg-10">
+                    <div class="wrap d-md-flex">
+                        <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
+                            <div class="text w-100">
+                                <h2>Account Created</h2>
+                                {% comment %} <p>Don't have an acocunt?</p> {% endcomment %}
+                                {% comment %} <a href="#" class="btn btn-white btn-outline-white">Sign Up</a> {% endcomment %}
+                            </div>
+                        </div>
+                        <div class="login-wrap p-4 p-lg-5">
+                            <div class="d-flex">
+                                <div class="w-100">
+                                    <h3 class="mb-4">Continue</h3>
+                                </div>
+                                {% comment %} <div class="w-100">
+                                    <p class="social-media d-flex justify-content-end">
+                                        <a href="" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-google"></span></a>
+                                        <a href="" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-twitter"></span></a>
+                                    </p>
+                                </div> {% endcomment %}
+                            </div>
+                            <div class="sigin-form">
+                                <div class="form-group mb-3 mt-4">
+                                    <p class="mb-2">Nice, you've successfully created an account on ProgressWave. Let's get on to setting up your profile</p>
+                                </div>
+                                <div class="form-group mb-5 mt-3">
+                                    <a href="{% url 'profile' %}" class="form-control btn btn-primary sub,it px-3">Continue</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</main><!-- End #main -->
+{% endblock %}
