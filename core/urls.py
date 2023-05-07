@@ -6,6 +6,7 @@ urlpatterns = [
     # <--------------------- Auth Views Start ------------------------------> #
     path('home', views.home, name="home"),
     path('profile', views.profile, name="profile"),
+    path('continue', views.cont, name="cont"),
     # <--------------------- Auth Views End ------------------------------> #
 
 

@@ -17,10 +17,12 @@
             padding: 12px 0;
         }
     </style>
-	<link rel="stylesheet" href="{% static 'assets/css/sidebar.css' %}">
+	<link rel="stylesheet" href="{% static 'assets/css/set.css' %}">
     <link rel="stylesheet" href="{% static 'assets/css/home.css' %}">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300&display=swap" rel="stylesheet">
 	{% block css %}{% endblock %}
-	<link href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@300&display=swap" rel="stylesheet">  
   </head>
   <body>
     <div class="wrapper d-flex align-items-stretch">
@@ -28,48 +30,48 @@
 			<div class="custom-menu">
 				<button type="button" id="sidebarCollapse" class="btn btn-custom">
 					<i class="bi bi-text-right fw-bold"></i>
-					<span class="sr-only">Toggle Menu</span>
+					<span class="sr-only"></span>
 				</button>
 			</div>
 			
-			<div class="p-4">
+			<div class="p-4 mb-2">
 				<h1><a href="#" class="logo"><img src="{% static 'assets/img/20230502_154653.png' %}" alt="" width="100" height="100"></h1>
 				<ul class="list-unstyled components mb-5">
 
 					<li>
-					<a href="#" class="custom-text"><i class="bi bi-house mr-3 custom-text"></i> Home</a>
+					<a href="#" class="custom-text"><i class="bi bi-house mr-3 mb-2 custom-text"></i> Home</a>
 					</li>
 
 					<li class="active">
-						<a href="#" class="custom-text"><i class="bi bi-person-fill mr-3"></i> Profile</a>
+						<a href="#" class="custom-text"><i class="bi bi-person-fill mr-3 mb-2"></i> Profile</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-globe mr-3 custom-text"></i> Protect the Earth</a>
+						<a href="#" class="custom-text"><i class="bi bi-globe mr-3 custom-text mb-2"></i> Protect the Earth</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-card-heading mr-3 custom-text"></i> Courses</a>
+						<a href="#" class="custom-text"><i class="bi bi-card-heading mr-3 custom-text mb-2"></i> Courses</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-briefcase mr-3 custom-text"></i> Opportunities</a>
+						<a href="#" class="custom-text"><i class="bi bi-briefcase mr-3 custom-text mb-2"></i> Opportunities</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-plus mr-3 custom-text"></i> First Aid</a>
+						<a href="#" class="custom-text"><i class="bi bi-plus mr-3 custom-text mb-2"></i> First Aid</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-calendar-plus mr-3 custom-text"></i> Book Appointments</a>
+						<a href="#" class="custom-text"><i class="bi bi-calendar-plus mr-3 custom-text mb-2"></i> Book Appointments</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-calendar-plus-fill mr-3 custom-text"></i>My Appointments</a>
+						<a href="#" class="custom-text"><i class="bi bi-calendar-plus-fill mr-3 custom-text mb-2"></i> My Appointments</a>
 					</li>
 
 					<li>
-						<a href="#" class="custom-text"><i class="bi bi-arrow-right mr-3 custom-text"></i> Logout</a>
+						<a href="#" class="custom-text"><i class="bi bi-arrow-right mr-3 custom-text mb-2"></i> Logout</a>
 					</li>
 
 				</ul>

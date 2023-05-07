@@ -25,6 +25,7 @@ class Profile(models.Model):
     owner = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     id_user = models.IntegerField(null=True)
     nationality = models.CharField(max_length=300)
+    phone_number = models.CharField(max_length=300)
     title = models.CharField(max_length=100)
     about_me = models.CharField(max_length=200)
     date_joined = models.DateField(auto_now_add=True)    

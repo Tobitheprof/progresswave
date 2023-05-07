@@ -1,3 +1,7 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300&display=swap');
+*{
+  font-family: Lato;
+}
 :root{
   --active-link: #051ea7;
   --normal-link: #7695e2;
@@ -8,6 +12,7 @@
   --darker-white: #dfdede;
   --light-black: #413e3e;
   --shady-blue: #8b9bf1;
+  --sidebar-color: #173ebe;
 }
 .intro{
     background: #3b5abb;
@@ -24,6 +29,15 @@
 }
 section{
     padding: 60px 0;
+}
+#sidebar{
+  background: var(--sidebar-color) !important;
+}
+a{
+  text-decoration: none;
+}
+span{
+  color: var(--active-link);
 }
 /*--------------------------------------------------------------
 # Whu Us

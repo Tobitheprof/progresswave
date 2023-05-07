@@ -1,37 +1,41 @@
 {% extends 'base2.html' %}
 {% load static %}
 {% block content %}
-  <h3 class="mb-4">Profile and Settings</h3>
+  <div class="header-stuff border-bottom mb-4">
+    <h3 class="">Profile and <span>Settings</span></h3>
+    <p>Here, you can easily edit your profile information as well as set preferences.</p>
+  </div>
+
   <div class="row justify-content-center">
-    <div class="col-lg-4 col-md-3 d-flex align-items-stretch">
+    <div class="col-lg-4 col-md-3 align-items-stretch">
       <div class="">
         <img src="{% static 'assets/img/blank_image.jpg' %}" alt="profile picture" class="rounded-3 mb-2" width="150">
-        <h3>Oluwatobi EKundayo</h3>
+        <h3>Oluwatobi Ekundayo</h3>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Debitis animi earum sint, soluta harum consequatur ipsum rem unde voluptates ex tenetur molestiae molestias totam facere, deleniti iste perspiciatis reprehenderit ea.</p>
         <p> <i class="bi bi-clock"></i>  Joined 2023</p>
         <p> <i class="bi bi-gear"></i>  Learner Account</p>
       </div>
     </div>  
-    <div class="col-lg-8 col-md-9 d-flex align-items-stretch">
+    <div class="col-lg-8 col-md-9 align-items-stretch">
       <form method="POST">
         {% csrf_token %}
           <div class="row g-3">
             <div class="header-stuff border-bottom">
-              <h5>Basic Info</h5> 
+              <h4>Basic <span>Info</span> </h4> 
             </div>
             <div class="col-sm-6">
-              <label for="firstName" class="form-label">First Name:</label>
+              <label for="first_name" class="form-label">First Name:</label>
               <div class="input-group has-validation">
                 <span class="input-group-text"><i class="bi bi-person"></i></span>
-                <input type="text" class="form-control" id="username" value="{{user.first_name}}" required disabled > 
+                <input type="text" class="form-control" id="first_name" value="{{user.first_name}}" required disabled > 
               </div>                        
             </div>
 
             <div class="col-sm-6 mb-3">
-              <label for="lastName" class="form-label">Last Name:</label>
+              <label for="last_name" class="form-label">Last Name:</label>
               <div class="input-group has-validation">
                 <span class="input-group-text"><i class="bi bi-person-fill"></i></span>
-                <input type="text" class="form-control" id="username" placeholder="Last Name" required disabled value="{{user.last_name}}">
+                <input type="text" class="form-control" id="last_name" placeholder="Last Name" required disabled value="{{user.last_name}}">
               </div>                        
             </div>
 
@@ -44,53 +48,46 @@
             </div>
 
             <div class="col-sm-6 mb-3">
-                <label for="username" class="form-label">Nationality:</label>
-                <div class="input-group">
-                  <span class="input-group-text"><i class="bi bi-flag"></i></span>
-                  <input type="text" class="form-control" id="username" placeholder="E.g. Japanese, Polish, Hungarian" required name="nationality" value="{{user_profile.nationality}}">
-                </div>
-            </div>
-
-            <div class="col-sm-6 mb-3">
-              <label for="username" class="form-label">Title:</label>
+              <label for="title" class="form-label">Title:</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="bi bi-flag"></i></span>
-                <input type="text" class="form-control" id="username" placeholder="E.g. Japanese, Polish, Hungarian" required name="nationality" value="{{user_profile.nationality}}">
+                <input type="text" class="form-control" id="title" placeholder="E.g. Mr, Mrs, Master, Prof e.t.c" required name="title" value="{{user_profile.title}}">
               </div>
             </div>
 
 
             <div class="header-stuff border-bottom">
-              <h5>Account Information</h5> 
+              <h4>Account <span>Information</span> </h4> 
             </div>
+
             <div class="col-sm-6 mb-3">
-              <label for="username" class="form-label">Nationality:</label>
+              <label for="nationality" class="form-label">Nationality:</label>
               <div class="input-group">
                 <span class="input-group-text"><i class="bi bi-flag"></i></span>
-                <input type="text" class="form-control" id="username" placeholder="E.g. Japanese, Polish, Hungarian" required name="nationality" value="{{user_profile.nationality}}">
+                <input type="text" class="form-control" id="nationality" placeholder="E.g. Japanese, Polish, Hungarian" required name="nationality" value="{{user_profile.nationality}}">
               </div>
             </div>
 
             <div class="col-sm-6 mb-3">
-              <label for="username" class="form-label">Phone Number:</label>
+              <label for="phone_number" class="form-label">Phone Number:</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-house"></i></span>
-                <input type="text" class="form-control" id="username" placeholder="Address" required name="address" value="{{user_profile.address}}">
+                <span class="input-group-text"><i class="bi bi-phone"></i></span>
+                <input type="text" class="form-control" id="phone_number" placeholder="+123456789" required name="phone_number" value="{{user_profile.phone_number}}">
               </div>
             </div>
 
-            <div class="col-12 mb-3">
-              <label for="username" class="form-label">Email Address:</label>
+            <div class="col-sm-6 mb-3">
+              <label for="email" class="form-label">Email Address:</label>
               <div class="input-group">
-                <span class="input-group-text"><i class="bi bi-telephone"></i></span>
-                <input type="text" class="form-control" id="username" placeholder="Phone Number" name="phone_number" value="{{user_profile.phone_number}}" required>
+                <span class="input-group-text"><i class="bi bi-envelope"></i></span>
+                <input type="text" class="form-control" id="email" placeholder="email" name="email" value="{{user.email}}" required disabled>
               </div>
             </div>
 
-            <div class="col-12 mb-3">
-              <label for="username" class="form-label">About Me:</label>
+            <div class="col-sm-12 mb-3">
+              <label for="about_me" class="form-label">About Me:</label>
               <div class="input-group">
-                <textarea name="how" id="desc" cols="15" rows="10" placeholder="how did you come across ProgressWave?" class="form-control" required>{{user_profile.how}}</textarea>
+                <textarea name="how" id="desc" cols="15" rows="10" placeholder="how did you come across ProgressWave?" class="form-control" name="about_me" required>{{user_profile.how}}</textarea>
               </div>
             </div>
           </div>
