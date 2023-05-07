@@ -86,7 +86,7 @@ def register(request):
                 }
                 message = get_template('mail.html').render(ctx)
                 msg = EmailMessage(
-                    'Welcome to Paradoxx',
+                    'Welcome to ProgressWave',
                     message,
                     'Paradoxx',
                     [email],
@@ -106,6 +106,29 @@ def register(request):
             messages.info(request, "Passwords do not match")
             return redirect("register")
     return render(request, 'register.html')
+
+@login_required
+def cont(request):
+    if Profile.objects.filter(owner=request.user).exists():
+        return redirect("home")
+    else:
+        user_model = User.objects.get(username=request.user)
+        new_profile = Profile.objects.create(owner=user_model, id_user=user_model.id)
+        new_profile.save()
+        ctx = {
+            'user' : user_model.username
+        }
+        message = get_template('mail.html').render(ctx)
+        msg = EmailMessage(
+            'Welcome to Sigma',
+            message,
+            'Paradoxx',
+            [user_model.email],
+        )
+        msg.content_subtype ="html"# Main content is now text/html
+        msg.send()
+    return render(request, 'next.html')
+
 
 
 # <--------------------- Unauth Views End ------------------------------> #

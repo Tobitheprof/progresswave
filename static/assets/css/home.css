@@ -1,8 +1,26 @@
+:root{
+  --active-link: #051ea7;
+  --normal-link: #7695e2;
+  --muted-text : #99b3fcf3;
+  --btn-primary: #0c38b5;
+  --btn-hover:   #1f46b1;
+  --white-text: #fff;
+  --darker-white: #dfdede;
+  --light-black: #413e3e;
+  --shady-blue: #8b9bf1;
+}
 .intro{
     background: #3b5abb;
 }
 .white{
     color: #f3f3f3;
+}
+.btn-custom{
+  background: var(--btn-primary);
+  color: var(--white-text);
+}
+.btn-custom:hover{
+  background: var(--btn-hover);
 }
 section{
     padding: 60px 0;
