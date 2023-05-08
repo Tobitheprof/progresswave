@@ -1,0 +1,64 @@
+{% extends 'base2.html' %}
+{% load static %}
+{% block content %}
+<h3>E-<span>Library</span></h3>
+<p class="lead">Get access to amazing books that have been authored by seasoned authors that span across all categories from science, art </p>
+<section id="popular-courses" class="courses">
+    <div class="" data-aos="fade-up"  data-aos-delay="500">
+      <div class="row" data-aos-delay="100">
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-3">
+          <div class="course-item">
+            <img src="{% static 'assets/img/earth.jpg' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <a href="#"><h4>Get Started</h4></a>
+                <p class="price"></p>
+              </div>
+
+              <h3><a href="#">Protect the Earth</a></h3>
+              <p>Join us in protecting our planet! Every small action counts. Reduce, reuse, and recycle to help take climate action. Choose sustainable options. Let's work together to create a greener, healthier Earth for all.</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <i class="bi bi-person-fill"></i>
+                  <span>ProgressWave</span>
+                </div>
+                <!-- <div class="trainer-rank d-flex align-items-center">
+                  <i class="bx bx-user"></i>&nbsp;50
+                  &nbsp;&nbsp;
+                  <i class="bx bx-heart"></i>&nbsp;65
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div> <!-- End Course Item-->
+
+        <div class="col-lg-4 col-md-6 d-flex align-items-stretch mb-3">
+          <div class="course-item">
+            <img src="{% static 'assets/img/business.jpg' %}" class="img-fluid" alt="...">
+            <div class="course-content">
+              <div class="d-flex justify-content-between align-items-center mb-3">
+                <a href="#"><h4>Get Started</h4></a>
+                <p class="price"></p>
+              </div>
+
+              <h3><a href="#">Business</a></h3>
+              <p>Business is the soul of an economy. It's what helps to keep everthing in balance in the world of finance. Learn everything you need to know about business right here on ProgressWave and get started with building that awesome career in finance today.</p>
+              <div class="trainer d-flex justify-content-between align-items-center">
+                <div class="trainer-profile d-flex align-items-center">
+                  <i class="bi bi-person-fill"></i>
+                  <span>ProgressWave</span>
+                </div>
+                <!-- <div class="trainer-rank d-flex align-items-center">
+                  <i class="bx bx-user"></i>&nbsp;50
+                  &nbsp;&nbsp;
+                  <i class="bx bx-heart"></i>&nbsp;65
+                </div> -->
+              </div>
+            </div>
+          </div>
+        </div> <!-- End Course Item-->
+       </div>
+    </div>
+</section>
+{% endblock %}

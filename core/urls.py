@@ -9,6 +9,8 @@ urlpatterns = [
     path('profile', views.profile, name="profile"),
     path('continue', views.cont, name="cont"),
     path('logout', views.logout, name="logout"),
+    path('cont', views.cont, name="cont"),
+    path('library', views.library, name="library"),
     
     # <---------- Sub URL Views For Courses in Auth Start -----------------> #
     path('courses/<str:slug>/', views.det, name="det"),

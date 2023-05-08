@@ -139,6 +139,9 @@ def det(request, slug):
     }
     return render(request, 'det.html', context)
 
+def library(request):
+    return render(request, 'library.html')
+
 
 
 
@@ -159,7 +162,7 @@ def login(request):
     user = request.user
 
     if user.is_authenticated:
-        return redirect()
+        return redirect('home')
 
     context = {
         'title' : 'Login',
