@@ -7,6 +7,7 @@ urlpatterns = [
     path('home', views.home, name="home"),
     path('profile', views.profile, name="profile"),
     path('continue', views.cont, name="cont"),
+    path('logout', views.logout, name="logout"),
     # <--------------------- Auth Views End ------------------------------> #
 
 

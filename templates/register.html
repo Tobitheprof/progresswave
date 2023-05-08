@@ -1,4 +1,5 @@
 {% extends 'base.html' %}
+{% load socialaccount %}
 {% load static %}
 {% block css %}
 <link rel="stylesheet" href="{% static 'assets/css/auth.css' %}">
@@ -8,7 +9,7 @@
 
     <!-- ======= Breadcrumbs ======= -->
     <section class="breadcrumbs">
-      <div class="container p-3">
+      <div class="container p-4">
 
         <ol>
           <li><a href="index.html">Home</a></li>
@@ -38,7 +39,7 @@
                               </div>
                               <div class="w-100">
                                   <p class="social-media d-flex justify-content-end">
-                                      <a href="" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-google"></span></a>
+                                      <a href="{% provider_login_url 'google' %}" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-google"></span></a>
                                       <a href="" class="social-icon d-flex align-items-center justify-content-center"><span class="bi bi-twitter"></span></a>
                                   </p>
                               </div>
