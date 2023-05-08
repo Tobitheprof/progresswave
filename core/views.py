@@ -14,9 +14,13 @@ import json
 
 
 # <--------------------- Auth Views Start ------------------------------> #
+
+@login_required
 def home(request):
     return render(request, 'home.html')
 
+
+@login_required
 def profile(request):
     user_profile = Profile.objects.get(owner=request.user)
     context = {
