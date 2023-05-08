@@ -18,7 +18,27 @@ def home(request):
     return render(request, 'home.html')
 
 def profile(request):
-    return render(request, 'profile.html')
+    user_profile = Profile.objects.get(owner=request.user)
+    context = {
+        'user_profile' : user_profile,
+        'title' : 'Edit Profile'
+    }
+    if request.method == "POST":
+        phone_number = request.POST['phone_number']
+        nationality = request.POST['nationality']
+        title = request.POST['title']
+
+        user_profile.phone_number = phone_number
+        user_profile.nationality = nationality
+        user_profile.title = title
+
+        user_profile.save()
+        messages.info(request, "Profile updated successfully")
+        return redirect('home')
+
+
+        
+    return render(request, 'profile.html', context)
 
 # <--------------------- Auth Views End ------------------------------> #
 
@@ -32,10 +52,10 @@ def index(request):
     return render(request, 'index.html')
 
 def login(request):
-    # user = request.user
+    user = request.user
 
-    # if user.is_authenticated:
-    #     return redirect()
+    if user.is_authenticated:
+        return redirect()
 
     context = {
         'title' : 'Login',
@@ -105,7 +125,7 @@ def register(request):
         else:
             messages.info(request, "Passwords do not match")
             return redirect("register")
-    return render(request, 'register.html')
+    return render(request, 'register.html', context)
 
 @login_required
 def cont(request):

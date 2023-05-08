@@ -28,7 +28,7 @@
                           <div class="text w-100">
                               <h2>Welcome Back</h2>
                               <p>Don't have an acocunt?</p>
-                              <a href="#" class="btn btn-white btn-outline-white">Sign Up</a>
+                              <a href="{% url 'register' %}" class="btn btn-white btn-outline-white">Sign Up</a>
                           </div>
                       </div>
                       <div class="login-wrap p-4 p-lg-5">
@@ -44,6 +44,7 @@
                               </div>
                           </div>
                           <form action="" method="POST" class="sigin-form">
+                            {% csrf_token %}
                               <div class="form-group mb-3 mt-4">
                                   <label for="username" class="label mb-2">Username: </label>
                                   <input type="text" name="username" id="username" class="form-control" name="username" placeholder="Username" required>

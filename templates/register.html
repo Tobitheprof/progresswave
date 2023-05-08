@@ -26,15 +26,15 @@
                   <div class="wrap d-md-flex">
                       <div class="text-wrap p-4 p-lg-5 text-center d-flex align-items-center order-md-last">
                           <div class="text w-100">
-                              <h2>Welcome Back</h2>
-                              <p>Don't have an acocunt?</p>
-                              <a href="#" class="btn btn-white btn-outline-white">Sign Up</a>
+                              <h2>Welcome</h2>
+                              <p>Already have an acocunt?</p>
+                              <a href="{% url 'login' %}" class="btn btn-white btn-outline-white">Login</a>
                           </div>
                       </div>
                       <div class="login-wrap p-4 p-lg-5">
                           <div class="d-flex">
                               <div class="w-100">
-                                  <h3 class="mb-4">Sign In</h3>
+                                  <h3 class="mb-4">Sign Up</h3>
                               </div>
                               <div class="w-100">
                                   <p class="social-media d-flex justify-content-end">
@@ -44,6 +44,7 @@
                               </div>
                           </div>
                           <form action="" method="POST" class="sigin-form">
+                            {% csrf_token %}
 
                             <div class="form-group mb-3 mt-4">
                                 <label for="first_name" class="label mb-2">First Name: </label>
@@ -61,17 +62,23 @@
                             </div>
 
                             <div class="form-group mb-3 mt-4">
+                              <label for="username" class="label mb-2">Username: </label>
+                              <input type="text" name="username" id="username" class="form-control" placeholder="johndoe123" required>
+                            </div>
+
+
+                            <div class="form-group mb-3 mt-4">
                               <label for="password" class="label mb-2">Password: </label>
                               <input type="password" name="password" id="password" class="form-control" placeholder="Password" required>
                             </div>
 
                             <div class="form-group mb-3 mt-4">
-                              <label for="password2" class="label mb-2">Confirm Password: </label>
+                              <label for="password2" class="label mb-3">Confirm Password: </label>
                               <input type="password" name="password2" id="password2" class="form-control" placeholder="Confirm Password" required>
                             </div>
                           
                             <div class="form-group mb-5 mt-3">
-                                <button type="submit" class="form-control btn btn-primary sub,it px-3">Log In</button>
+                                <button type="submit" class="form-control btn btn-primary sub,it px-3">Sign Up</button>
                             </div>
 
                           </form>
