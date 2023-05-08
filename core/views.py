@@ -140,15 +140,33 @@ def det(request, slug):
     return render(request, 'det.html', context)
 
 def library(request):
-    return render(request, 'library.html')
-
-
-
-
-
-
+    if request.method == 'POST':
+        text = request.POST['text']
+        url = "https://www.googleapis.com/books/v1/volumes?q="+text
+        print(url)
+        r = requests.get(url)
+        answer = r.json()
+        result_list = []
+        for i in range(10):
+            result_dict = {
+                'title':answer['items'][i]['volumeInfo']['title'],
+                # 'subtitle':answer['items'][i]['volumeInfo'].get('subtitle'),
+                'description':answer['items'][i]['volumeInfo'].get('description'),
+                'count':answer['items'][i]['volumeInfo'].get('pageCount'),
+                'categories':answer['items'][i]['volumeInfo'].get('categories'),
+                # 'rating':answer['items'][i]['volumeInfo'].get('pageRating'),
+                'picture':answer['items'][i]['volumeInfo'].get('imageLinks').get('thumbnail'),                
+                'preview':answer['items'][i]['volumeInfo'].get('previewLink')
+            }
+            result_list.append(result_dict)
+            #print(result_list)      
+            context = {
+                 'results':result_list,
+            }
+        return render(request, 'library.html', context)
+    else:    
+        return render(request, 'library.html')
 # <--------------------- Auth Views End ------------------------------> #
-
 
 
 
