@@ -142,22 +142,26 @@ def det(request, slug):
 def library(request):
     if request.method == 'POST':
         text = request.POST['text']
-        url = "https://www.googleapis.com/books/v1/volumes?q="+text
+        url = f"https://www.googleapis.com/books/v1/volumes?q=+{text}"
         print(url)
         r = requests.get(url)
         answer = r.json()
         result_list = []
         for i in range(10):
-            result_dict = {
-                'title':answer['items'][i]['volumeInfo']['title'],
-                # 'subtitle':answer['items'][i]['volumeInfo'].get('subtitle'),
-                'description':answer['items'][i]['volumeInfo'].get('description'),
-                'count':answer['items'][i]['volumeInfo'].get('pageCount'),
-                'categories':answer['items'][i]['volumeInfo'].get('categories'),
-                # 'rating':answer['items'][i]['volumeInfo'].get('pageRating'),
-                'picture':answer['items'][i]['volumeInfo'].get('imageLinks').get('thumbnail'),                
-                'preview':answer['items'][i]['volumeInfo'].get('previewLink')
-            }
+            try:
+                result_dict = {
+                    'title':answer['items'][i]['volumeInfo']['title'],
+                    # 'subtitle':answer['items'][i]['volumeInfo'].get('subtitle'),
+                    'description':answer['items'][i]['volumeInfo'].get('description'),
+                    'count':answer['items'][i]['volumeInfo'].get('pageCount'),
+                    'categories':answer['items'][i]['volumeInfo'].get('categories'),
+                    # 'rating':answer['items'][i]['volumeInfo'].get('pageRating'),
+                    'picture':answer['items'][i]['volumeInfo'].get('imageLinks').get('thumbnail'),                
+                    'preview':answer['items'][i]['volumeInfo'].get('previewLink')
+                }
+
+            except:
+                pass
             result_list.append(result_dict)
             #print(result_list)      
             context = {
