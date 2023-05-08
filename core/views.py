@@ -49,6 +49,93 @@ def logout(request):
     auth.logout(request)
     return redirect('login')
 
+@login_required
+def tech(request):
+    course = Course.objects.filter(category="technology")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html', context)
+
+@login_required
+def law(request):
+    course = Course.objects.filter(category="technology")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html')
+
+
+@login_required
+def earth(request):
+    course = Course.objects.filter(category="earth")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html', context)
+
+
+@login_required
+def business(request):
+    course = Course.objects.filter(category="business")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html', context)
+
+
+@login_required
+def health(request):
+    course = Course.objects.filter(category="health")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html', context)
+
+
+@login_required
+def nationalism(request):
+    course = Course.objects.filter(category="nationalism")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html', context)
+
+
+@login_required
+def marine(request):
+    course = Course.objects.filter(category="marine")
+    context = {
+        'course' : course
+    }
+    return render(request, 'category.html', context)
+
+@login_required
+def det(request, slug):
+    course = Course.objects.get(slug = slug)
+    serial_number = request.GET.get('lecture')
+    lectures = course.lecture_set.all().order_by('serial_number')
+
+
+    if serial_number is None:
+        serial_number = 1
+    lecture = Lecture.objects.get(serial_number = serial_number, course = course)
+
+
+
+    context = {
+        'course' : course,
+        'lecture' : lecture,
+        'lectures' : lectures,
+        'title' : course
+
+    }
+    return render(request, 'det.html', context)
+
+
+
+
+
 
 # <--------------------- Auth Views End ------------------------------> #
 

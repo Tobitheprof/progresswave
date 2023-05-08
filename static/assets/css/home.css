@@ -142,5 +142,26 @@ span{
     font-size: 18px;
     color: #657a6d;
   }
+  .nav-item a{
+    border: 1px solid #e6e7ec !important;
+    margin-right: 10px;
+    color:  #31373D !important;
+    border-radius: 50px !important;
+  }
   
+  .nav-item:hover a{
+    border: 1px solid #FF5403 !important;
+    margin-right: 10px;
+    color: #FF5403 !important;
+    background-color: #FFDDCD;
+  
+  }
+  
+  .nav-item .active {
+    border: 1px solid #FF5403 !important;
+    margin-right: 10px;
+    color: #FF5403 !important;
+    background-color: #FFDDCD !important;
+  
+  }
 
