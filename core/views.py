@@ -53,7 +53,8 @@ def logout(request):
 def tech(request):
     course = Course.objects.filter(category="technology")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Technology',
     }
     return render(request, 'category.html', context)
 
@@ -61,16 +62,18 @@ def tech(request):
 def law(request):
     course = Course.objects.filter(category="technology")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Law'
     }
-    return render(request, 'category.html')
+    return render(request, 'category.html', context)
 
 
 @login_required
 def earth(request):
     course = Course.objects.filter(category="earth")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Protecting the Earth'
     }
     return render(request, 'category.html', context)
 
@@ -79,7 +82,8 @@ def earth(request):
 def business(request):
     course = Course.objects.filter(category="business")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Business'
     }
     return render(request, 'category.html', context)
 
@@ -88,7 +92,8 @@ def business(request):
 def health(request):
     course = Course.objects.filter(category="health")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Health'
     }
     return render(request, 'category.html', context)
 
@@ -97,7 +102,8 @@ def health(request):
 def nationalism(request):
     course = Course.objects.filter(category="nationalism")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Nationalism'
     }
     return render(request, 'category.html', context)
 
@@ -106,7 +112,8 @@ def nationalism(request):
 def marine(request):
     course = Course.objects.filter(category="marine")
     context = {
-        'course' : course
+        'course' : course,
+        'title' : 'Marine Life'
     }
     return render(request, 'category.html', context)
 

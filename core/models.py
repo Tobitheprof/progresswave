@@ -37,7 +37,7 @@ class Profile(models.Model):
 class Course(models.Model):
     title = models.CharField(max_length=100, unique=True)
     slug = AutoSlugField(populate_from="title", unique=True)
-    featured_image = models.ImageField(upload_to="Course Images")
+    featured_image = models.ImageField(upload_to="Course Images", help_text="Upload an image with a resolution of 3000x2000")
     author = models.CharField(max_length=100)
     number_of_lectures = models.CharField(max_length=300)
     category = models.CharField(max_length=300, choices=CATEGORIES)

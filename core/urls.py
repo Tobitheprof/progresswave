@@ -11,6 +11,7 @@ urlpatterns = [
     path('logout', views.logout, name="logout"),
     
     # <---------- Sub URL Views For Courses in Auth Start -----------------> #
+    path('courses/<str:slug>/', views.det, name="det"),
     path('courses/technology', views.tech, name="tech"),
     path('courses/eart-and-climate', views.earth, name="earth"),
     path('courses/buiness', views.business, name="business"),
