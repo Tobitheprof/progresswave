@@ -151,6 +151,7 @@ def library(request):
             try:
                 result_dict = {
                     'title':answer['items'][i]['volumeInfo']['title'],
+                    'authors':answer['items'][i]['volumeInfo']['authors'],
                     # 'subtitle':answer['items'][i]['volumeInfo'].get('subtitle'),
                     'description':answer['items'][i]['volumeInfo'].get('description'),
                     'count':answer['items'][i]['volumeInfo'].get('pageCount'),

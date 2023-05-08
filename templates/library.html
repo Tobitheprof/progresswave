@@ -57,7 +57,7 @@
         {% for result in results %}
         <div class="col-lg-4 col-md-6 align-items-stretch mb-3">
           <div class="course-item">
-            <img src="{{result.picture}}" class="img-fluid" alt="..." width="200">
+            <img src="{{result.picture}}" class="img-fluid" alt="..." width="150">
             <div class="course-content">
               <div class="d-flex justify-content-between align-items-center mb-3">
                 <a href="{{result.preview}}"><h4>Read Me</h4></a>
@@ -65,11 +65,11 @@
               </div>
 
               <h3><a href="{{result.preview}}">{{result.title}}</a></h3>
-              <p>{{result.description|truncatechars:15}}</p>
+              <p>{{result.description|truncatechars:25}}</p>
               <div class="trainer d-flex justify-content-between align-items-center">
                 <div class="trainer-profile d-flex align-items-center">
                   <i class="bi bi-book"></i>
-                  <span>{{result.page_count}} Pages</span>
+                  <span>{{result.count}} Pages</span><br>
                 </div>
                 <!-- <div class="trainer-rank d-flex align-items-center">
                   <i class="bx bx-user"></i>&nbsp;50
