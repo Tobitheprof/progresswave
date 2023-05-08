@@ -25,11 +25,11 @@ p{
     color: #f3f3f3;
 }
 .btn-custom{
-  background: var(--btn-primary);
-  color: var(--white-text);
+  background: var(--btn-primary) !important;
+  color: var(--white-text) !important;
 }
 .btn-custom:hover{
-  background: var(--btn-hover);
+  background: var(--btn-hover) !important;
 }
 section{
     padding: 60px 0;

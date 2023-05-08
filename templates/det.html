@@ -5,16 +5,15 @@
 {% endblock %}
 {% block content %}
 
-<section id="lecture">
     <div class="">
         <div class="text-start">
-            <h3 class="green-text fw-bold">{{course.title}}</h3>
+            <h3 class="green-text fw-bold"><span>{{course.title}}</span></h3>
             <p class="lead">{{course.description}}</p>
             <p><a class="btn btn-custom custom-text" type="button" type="button" data-bs-toggle="modal" data-bs-target="#work">Lessons in this course</a></p>
             <div class="embed-responsive embed-responsive-21by9">
                 <iframe class="embed-responsive-item" src="https://www.youtube.com/embed/{{lecture.video_link}}" allowfullscreen></iframe>
             </div>
-            <h4 class="green-text fw-bold mt-2">{{lecture.serial_number}}. {{lecture.title}}</h4>
+            <h4 class="green-text fw-bold mt-2"><span>{{lecture.serial_number}}. {{lecture.title}}</span></h4>
             <p class="lead">{{lecture.description}}</p>
         </div>
     </div>
@@ -31,7 +30,7 @@
                     <ul class="navbar-nav">
                         {% for a in lectures %}
                         <li class="nav-item list-group-item">
-                            <h4><span><a href="?lecture={{a.serial_number}}" class="">{{a.serial_number}}. {{a}}</a></span></h4>
+                            <h4><a href="?lecture={{a.serial_number}}" class="">{{a.serial_number}}. {{a}}</a></h4>
                         </li>
                         {% endfor %}
                     </ul>
@@ -40,6 +39,5 @@
         </div>
     </div>
     <!--Modal End-->
-</section>
 
 {% endblock %}
