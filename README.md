@@ -75,14 +75,14 @@ git clone https://github.com/Tobitheprof/progresswave.git
 
 3. Install pip packages
 
-```cd into project directory
 ```
-```pip install -r "requirements.txt"
+cd into project directory
+pip install -r "requirements.txt"
 ```
-
 4. Run the project in `CLI`
 
-```python manage.py makemigrations
+```
+python manage.py makemigrations
 python manage.py migrate
 python manage.py runserver
 ```
