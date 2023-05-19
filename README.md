@@ -76,7 +76,7 @@ git clone https://github.com/Tobitheprof/progresswave.git
 3. Install pip packages
 
 ```
-cd into project directory
+cd <project_directory>
 pip install -r "requirements.txt"
 ```
 4. Run the project in `CLI`
