@@ -32,16 +32,20 @@
       <a href="index.html" class="logo me-auto"><img src="{% static 'assets/img/20230502_154653.png' %}" alt="" class="img-fluid" width="115"></a>
       <nav id="navbar" class="navbar order-last order-lg-0">
         <ul>
-          <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          <li><a class="nav-link scrollto" href="#services">Services</a></li>
+          <li><a class="nav-link scrollto active" href="{% url 'index' %}">Home</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">About</a></li>
+          {% comment %} <li><a class="nav-link scrollto" href="#services">Services</a></li> {% endcomment %}
           <li><a href="blog.html">Blog</a></li>
-          <li><a class="nav-link scrollto" href="#contact">Contact</a></li>
+          <li><a class="nav-link scrollto" href="{% url 'index' %}">Contact</a></li>
         </ul>
         <i class="bi bi-list mobile-nav-toggle"></i>
       </nav><!-- .navbar -->
+      {% if user.is_authenticated %}
+      <a href="{% url 'home' %}" class="get-started-btn scrollto">Dashboard</a>
+      {% else %}
+      <a href="{% url 'login' %}" class="get-started-btn scrollto">Login</a>
+      {% endif %}
 
-      <a href="#about" class="get-started-btn scrollto">Get Started</a>
     </div>
   </header><!-- End Header -->
 
@@ -60,15 +64,15 @@
             <div class="col-lg-3 col-md-6 footer-contact">
                 <h3>ProgressWave<span>.</span></h3>
                 <p>
-                A108 Adam Street <br>
+                We're a remotec companys <br>
                 New York, NY 535022<br>
                 United States <br><br>
-                <strong>Phone:</strong> +1 5589 55488 55<br>
-                <strong>Email:</strong> info@example.com<br>
+                <strong>Phone:</strong> +234 9159 37 2550<br>
+                <strong>Email:</strong> tobiekundayo07@gmail.com<br>
                 </p>
             </div>
 
-            <div class="col-lg-2 col-md-6 footer-links">
+            {% comment %} <div class="col-lg-2 col-md-6 footer-links">
                 <h4>Useful Links</h4>
                 <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Home</a></li>
@@ -77,9 +81,9 @@
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Terms of service</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Privacy policy</a></li>
                 </ul>
-            </div>
+            </div> {% endcomment %}
 
-            <div class="col-lg-3 col-md-6 footer-links">
+            {% comment %} <div class="col-lg-3 col-md-6 footer-links">
                 <h4>Our Services</h4>
                 <ul>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Web Design</a></li>
@@ -88,7 +92,7 @@
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Marketing</a></li>
                 <li><i class="bx bx-chevron-right"></i> <a href="#">Graphic Design</a></li>
                 </ul>
-            </div>
+            </div> {% endcomment %}
 
             </div>
         </div>

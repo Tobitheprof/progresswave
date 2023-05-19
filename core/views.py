@@ -142,6 +142,7 @@ def det(request, slug):
 def library(request):
     if request.method == 'POST':
         text = request.POST['text']
+        filter = "free-ebooks"
         url = f"https://www.googleapis.com/books/v1/volumes?q=+{text}"
         print(url)
         r = requests.get(url)
